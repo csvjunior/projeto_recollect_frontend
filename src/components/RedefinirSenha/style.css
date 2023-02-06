@@ -4,7 +4,6 @@
 
 .redefinir-senha-inputs input{
     border: 1px solid white;
-    color: black;
 }
 
 .redefinir-senha-inputs input::placeholder{

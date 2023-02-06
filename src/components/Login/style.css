@@ -5,13 +5,11 @@
 }
 
 .input-email-senha-logincard{
-    color: black;
     max-width: 600px;
 }
 
 .input-email-senha-logincard input{
     border: 1px solid white;
-    color: black;
 }
 
 .input-email-senha-logincard input::placeholder{

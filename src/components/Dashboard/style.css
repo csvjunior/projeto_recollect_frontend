@@ -8,7 +8,6 @@
 
 .coluna-nome-da-empresa-dashboard-card input{
     border: 1px solid white;
-    color: black;
 }
 
 .coluna-nome-da-empresa-dashboard-card input::placeholder{
@@ -21,7 +20,6 @@
 
 .coluna-site-da-empresa-dashboard-card input{
     border: 1px solid white;
-    color: black;
 }
 
 .coluna-site-da-empresa-dashboard-card input::placeholder{

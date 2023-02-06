@@ -24,7 +24,7 @@ export function ParceirosCard(props: CompaniesResponse) {
         <Stack spacing='3' textAlign='center'>
           <Heading fontSize='4rem' color='white'>Parceiros</Heading>
           <Center>
-            <Text className="texto-parceiros-card" fontSize='1rem' color='white' >
+            <Text className="texto-parceiros-card" fontSize='1rem' color={['green','white']} >
               A Recollect conta com inúmeras empresas parceiras que vão te apoiar no processo de descarte e reciclagem do seu lixo. <br />
               Abaixo, você poderá ver uma lista completa dos nossos parceiros, com detalhes sobre contato, materiais que eles reciclam e endereço. <br />
               Caso queria buscar as empresas por proximidade do seu endereço, <LinkRoute className="linkroute" to="/QueroReciclar">clique aqui</LinkRoute>.<br />
@@ -33,6 +33,11 @@ export function ParceirosCard(props: CompaniesResponse) {
 
         </Stack>
         {props?.companies?.map((company, index) => {
+          // Este é um exemplo de como usar o método "map" em JavaScript para percorrer um array de objetos "companies". 
+          // "props?.companies" está sendo usado para acessar a propriedade "companies" do objeto "props", 
+          // que é um objeto passado para o componente atual. O método "map" é usado para percorrer cada item do array "companies" e, 
+          // para cada item, é criado um novo elemento JSX (JavaScript XML) com a função de flecha (=>). 
+          // O primeiro argumento é a variável "company", que representa cada item do array e o segundo é index, é o indice do elemento.
           return (
             <Stack key={index}>
               <Card

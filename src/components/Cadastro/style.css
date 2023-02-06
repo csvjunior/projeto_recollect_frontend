@@ -27,7 +27,6 @@
 .coluna-cep-cidade-estado input,
 .coluna-senha-repetir-senha input{
     border: 1px solid white;
-    color: black;
 }
 
 .coluna-nome-da-empresa input::placeholder,

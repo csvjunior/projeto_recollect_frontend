@@ -45,7 +45,7 @@ export function HomeCard() {
               fontSize="3rem"
               fontWeight='bold'
               mt="10"
-              ml="10"
+              ml={["5","10"]}
             >
               Cuidar, educar, <br />
               conscientizar e somar. <br />

@@ -35,17 +35,33 @@ export function CadastroCard() {
     removeTheMaterialAtAnotherAddress: '',
     loginEmail: '',
     password: ''
-  });
+  }); // Essa é uma função chamada "CadastroCard" que está sendo exportada.    
+  // Dentro dessa função, está sendo usado o Hook "useState" do React para criar um estado para uma variável chamada "company". 
+  // Essa variável é do tipo "Company", que é uma interface ou tipo customizado com vários campos. 
+  // Todos os campos estão inicialmente vazios ou com o valor 0.
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
     setCompany({ ...company, [name]: value });
-  }
+  } // Essa é uma função chamada "handleChange" que é usada para lidar com mudanças em um elemento de input ou textarea.   
+  // Quando essa função é chamada (por exemplo, quando um usuário digita algo em um campo de formulário), 
+  // ela pega o "name" e o "value" do elemento que foi alterado. 
+  // Em seguida, usa a função "setCompany" para atualizar o estado "company" com o novo valor. 
+  // Isso é feito com a sintaxe de propagação (...company) para manter os outros valores do objeto "company" 
+  // e apenas atualizar o valor específico que precisa ser atualizado.
+
   const handleChangeAddress = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
     company.address = { ...company.address, [name]: value}
     setCompany({...company})
-  }
+  } // Essa é uma função semelhante chamada "handleChangeAddress"
+  //  que também é usada para lidar com mudanças em um elemento de input ou textarea, mas dessa vez específico para o endereço.
+  // Quando essa função é chamada, ele pega o "name" e o "value" do elemento que foi alterado. 
+  // Em seguida, atualiza o objeto "address" dentro do objeto "company" com o novo valor. 
+  // Isso é feito usando a sintaxe de propagação ({ ...company.address, [name]: value}) 
+  // para manter os outros valores do objeto "address" e apenas atualizar o valor específico que precisa ser atualizado.
+  // Por fim, ele usa a função "setCompany" para atualizar o estado "company" com o novo valor de "address" 
+  // e isso é feito com a sintaxe de propagação (...company) para garantir que os outros valores do objeto "company" não sejam afetados.
 
   
   function handleSubmit(event: { preventDefault: () => void; }) {
@@ -58,7 +74,14 @@ export function CadastroCard() {
       .catch(error => {
         console.log(error);
       });
-  }
+   } // Essa é uma função chamada "handleSubmit" que é usada para lidar com o envio de um formulário. 
+  // Ela é chamada quando o evento de envio é acionado (por exemplo, quando o usuário clica em um botão de "enviar").
+  // A primeira coisa que essa função faz é chamar "event.preventDefault()", o que impede que o navegador faça uma ação padrão, 
+  // como recarregar a página.  Em seguida, a função faz uma chamada à API com o método "post" passando a rota '/companies' 
+  // e o objeto "company" como parâmetros. Se a chamada for bem-sucedida, a página é redirecionada
+  //  para '/Dashboard' usando window.location.assign('/Dashboard');  Caso contrário, o erro é capturado e exibido no console.
+
+
   return (
     <Card
       className="novo-cadastro-card"
@@ -80,7 +103,7 @@ export function CadastroCard() {
 
       <Center>
         <Flex>
-          <Stack mt={["-5", '10']} className="coluna-nome-da-empresa" spacing={3} width="100%" >
+          <Stack mt={["-5", '10']} className="coluna-nome-da-empresa" spacing={3} width="100%" color="white">
             <Input placeholder="Nome da empresa*" type="name" name='companyName' value={company.companyName} onChange={handleChange}/>
             <Input placeholder="Nome do responsável*" type="name" name='responsibleName' value={company.responsibleName} onChange={handleChange}/>
             <Input placeholder="E-mail da empresa*" type="name" name='companyEmail' value={company.companyEmail} onChange={handleChange}/>
